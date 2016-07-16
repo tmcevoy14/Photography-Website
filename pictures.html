@@ -1,0 +1,87 @@
+<html>
+
+<title>Image Gallery</title>
+<style>
+body {
+background-color:#FFFFFF;
+color:#000000;
+font-family:Arial;
+font-size:11pt;
+letter-spacing:1;
+}
+.thumbnail {
+border:1px solid #000000;
+}
+.thumbSelected {
+border:1px solid #000000;
+}
+</style>
+
+<script>
+var lastID = 0;
+function SelectImg(id) {
+if (lastID > 0) {
+document.getElementById(lastID).className = "thumbnail";
+}
+document.getElementById(id).className = "thumbSelected";
+document.getElementById(0).src = document.getElementById(id).src;
+lastID = id;
+}
+function LoadTrigger() {
+SelectImg(1);
+}
+window.onload = LoadTrigger;
+</script>
+	<head>
+		<title>Pictures</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<div id="header-wrapper">
+		
+        	<div id="header" class="container">
+            
+            	<div id="logo"><h1><a href="#">Pictures</a></h1></div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="taboo.html">Taboo</a></li>
+                        <li><a href="carpediem.html">Carpe Diem</a></li>
+                        <li class="current_page_item"><a href="pictures.html">Pictures</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+		</div>
+		<!-- Header Ends Here -->
+     
+		<!-- Page -->
+        
+        	<div id="page">
+            	<div class="container">
+				<div align="center">
+				<b>Gallery of my art showing lightness and darkness.<br>
+				Click on a thumbnail to view it full size.</b>
+				<table cellpadding="0" cellspacing="0">
+				<tr>
+				<td align="center" valign="top">
+				<img id=1 class="thumbnail" src="images/bell.JPG" width=140 onclick="SelectImg(1)"> <img id=2 class="thumbnail" src="images/cliffs.JPG" width=140 onclick="SelectImg(2)"> <img id=3 class="thumbnail" src="images/sand.jpg" width=140 onclick="SelectImg(3)"><br>
+				<img id=4 class="thumbnail" src="images/guitar.JPG" width=140 onclick="SelectImg(4)"> <img id=5 class="thumbnail" src="carpe diem/miles_away.jpg" width=140 onclick="SelectImg(5)"> <img id=6 class="thumbnail" src="images/tree.JPG" width=140 onclick="SelectImg(6)"><br>
+				<img id=7 class="thumbnail" src="images/light.JPG" width=140 onclick="SelectImg(7)"> <img id=8 class="thumbnail" src="carpe diem/positive_energy.jpg" width=140 onclick="SelectImg(8)">
+				</td>
+				<td width="10">
+				</td>
+				<td align="center" valign="top">
+				<img id=0 src="" style="width: 60%">
+				</td>
+				</tr>
+				</table>
+            </div>
+           </div>
+</div>            
+		<!-- /Page -->
+	</body>
+</html>
